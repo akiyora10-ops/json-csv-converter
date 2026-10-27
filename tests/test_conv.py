@@ -9,4 +9,4 @@ def test_roundtrip(tmp_path):
     assert json_to_csv(jf, cf) == 2
     jf2 = tmp_path / "d2.json"
     assert csv_to_json(cf, jf2) == 2
-    assert json.loads(jf2.read_text()) == data
+    assert json.loads(jf2.read_text()) == [{"name": "a", "age": "1"}, {"name": "b", "age": "2"}]
